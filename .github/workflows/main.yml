@@ -1,0 +1,17 @@
+- name: Setup Android CLI
+  # You may pin to the exact commit or the version.
+  # uses: premex-ab/setup-android-cli@ec4f446c5fdea3c206fb73b4b3277709e7227e63
+  uses: premex-ab/setup-android-cli@v1.0.2
+  with:
+    # SDK packages to install via `android sdk install`. Space- or newline-separated, slash syntax (e.g. `platforms/android-34 build-tools/34.0.0 platform-tools`). Leave empty to install only the CLI with no SDK packages.
+    packages: # optional, default is 
+    # Override where the Android SDK is installed. Defaults to `~/Library/Android/sdk` on macOS and `~/Android/Sdk` on Linux. The chosen path is exported as `ANDROID_HOME` and `ANDROID_SDK_ROOT` for subsequent steps.
+    sdk-path: # optional, default is 
+    # Cache the CLI's unpacked resources (`~/.android/bin`) and the SDK between runs. Set to `false` to disable. Does not affect Gradle caching - use `gradle/actions/setup-gradle@v4` for that.
+    cache: # optional, default is true
+    # Extra input appended to the cache key. Change to bust the cache. The default key already includes OS, arch, and the hash of `**/libs.versions.toml` / `**/build.gradle*`.
+    cache-key: # optional, default is 
+    # Pass `--no-metrics` on `android` invocations made by this action (opts out of Google's usage telemetry). Defaults to `true`.
+    no-metrics: # optional, default is true
+    # Override the base URL for downloading the CLI binary. The action appends `/<platform>/android` (for example `/linux_x86_64/android`). Useful for internal mirrors or air-gapped environments. Defaults to Google's redirector.
+    install-url-base: # optional, default is https://redirector.gvt1.com/edgedl/android/cli/latest
